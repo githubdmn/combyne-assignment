@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/githubdmn/combyne-assignment/issues"
   },
-  "homepage": "https://github.com/githubdmn/combyne-assignment#readme"
+  "homepage": "https://github.com/githubdmn/combyne-assignment#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
