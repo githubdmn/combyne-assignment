@@ -4,10 +4,7 @@ const PORT = process.env.PROT || MYPORT;
 const express = require('express');
 const app = express();
 
-const Router = require('./test-02-api');
-
 app.use(express.json());
-app.use('/api', Router);
 
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}...`);
