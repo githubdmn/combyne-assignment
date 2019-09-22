@@ -1,22 +1,19 @@
+const MYPORT = 8000;
+const PORT = process.env.PROT || MYPORT;
 
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 8000;
 
-app.get('/', (req, res) => {
-    res.send('Hi there Heroku!');
-});
+const Router = require('./test-02-api');
 
-app.get('/api/items', (req, res) => {
-    res.send(JSON.stringify([1, 2, 3]));
-});
-
-/*
-app.post();
-app.put();
-app.delete();
-*/
+app.use(express.json());
+app.use('/api', Router);
 
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}...`);
+});
+
+app.get('/', (req, res) => {
+    console.log('Index page\n');
+    res.send('Index page');
 });
